@@ -47,6 +47,22 @@ const editContact = asyncHandler(async(req,res)=>{
 })
 
 const deleteContact = asyncHandler(async(req,res)=>{
+    const {id} = req.params.id
+
+    const deleteItem = await Contact.findOneAndDelete(id)
+    if(deleteItem){
+        return res.status(200).json({message:`Contact with the ${id} has been removed from databse`})
+    }
+
+    else{
+        
+    }
+
+})
+
+const deleteContacts = asyncHandler(async(req,res)=>{
+
+    await Contact.deleteMany({})
 
 })
 

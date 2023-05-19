@@ -144,7 +144,7 @@ const generateOTP = asyncHandler( async(req,res)=>{
             service: 'gmail',
             auth: {
               user: 'hikay133@gmail.com',
-              pass: 'cedric2@'
+              pass: 'prykelcplvburatu'
             }
           });
           
@@ -195,11 +195,13 @@ const resetLink = asyncHandler(async(req,res)=>{
         
         else{
             const link = `http://locahost/5000/${user._id}/password-reset/${token}`
+
+            const testAccount = ndemailer.createTestAccount()
             var transporter = nodemailer.createTransport({
                 service: 'gmail',
                 auth: {
                   user: 'hikay133@gmail.com',
-                  pass: 'cedric2@'
+                  pass: 'prykelcplvburatu'
                 }
               });
               
