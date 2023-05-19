@@ -1,14 +1,12 @@
 const express = require('express')
 const router = express.Router()
+const {getBlogs,getBlog} = require("../controllers/Blogs")
 
 
-router.get("/blogs",(req,res)=>{
 
-})
+router.get("/blogs",getBlogs)
 
-router.get("/blogs/:id",(req,res)=>{
-
-});
+router.get("/blogs/:id",getBlog);
 
 
 

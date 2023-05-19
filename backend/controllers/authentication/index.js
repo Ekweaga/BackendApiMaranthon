@@ -29,7 +29,7 @@ const login = asyncHandler(async (req,res)=>{
 
                     if(user && cmp){
                         const tokenSecret = "qwertyuiopasdfgh12345"
-                        const accessToken = jwt.sign({user:{username:user.username, email:user.email,id:user.id}},tokenSecret,{expiresIn:"3m"})
+                        const accessToken = jwt.sign({user:{username:user.username, email:user.email,id:user._id}},tokenSecret,{expiresIn:"3m"})
                         console.log(accessToken)
                         res.status(200).json({accessToken:accessToken})
                     }
